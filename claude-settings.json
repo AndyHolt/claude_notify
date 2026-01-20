@@ -1,0 +1,21 @@
+{
+  "hooks": {
+    "Notification": [
+      "matcher": "*",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "~/Projects/claude_notify/notify.sh 'input_required'"
+        }
+      ]
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          "type": "command",
+          "command": "~/Projects/claude_notify/notify.sh 'complete'"
+        ]
+      }
+    ]
+  }
+}
