@@ -45,8 +45,9 @@ A notification system for [Claude Code](https://github.com/anthropics/claude-cod
 
 4. (Optional) Add a Claude avatar image to your home directory:
    ```bash
-   # Download or create ~/claude.png
+   # Download or create ~/claude.png, for example using `https://claude.ai/apple-touch-icon.png`
    ```
+   This will be displayed in the notification.
 
 5. Configure Claude Code to use the hooks by copying the settings:
    ```bash
