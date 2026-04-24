@@ -2,6 +2,10 @@
 
 A notification system for [Claude Code](https://github.com/anthropics/claude-code) that sends macOS notifications when Claude requires input or completes tasks.
 
+<p align="center">
+  <img src="NotificationScreenshot.png" alt="Example Claude Code notification showing tmux pane, git branch, and worktree" width="420">
+</p>
+
 ## Features
 
 - **Smart Notifications**: Different sounds and messages for "input required" vs "task complete"
