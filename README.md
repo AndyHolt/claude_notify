@@ -2,6 +2,10 @@
 
 A notification system for [Claude Code](https://github.com/anthropics/claude-code) that sends macOS notifications when Claude requires input or completes tasks.
 
+<p align="center">
+  <img src="NotificationScreenshot.png" alt="Example Claude Code notification showing tmux pane, git branch, and worktree" width="420">
+</p>
+
 ## Features
 
 - **Smart Notifications**: Different sounds and messages for "input required" vs "task complete"
@@ -45,13 +49,33 @@ A notification system for [Claude Code](https://github.com/anthropics/claude-cod
 
 4. (Optional) Add a Claude avatar image to your home directory:
    ```bash
-   # Download or create ~/claude.png
+   # Download or create ~/claude.png, for example using `https://claude.ai/apple-touch-icon.png`
+   ```
+   This will be displayed in the notification.
+
+5. Configure Claude Code to use the hooks by merging `claude-settings.json`
+   into your Claude Code user settings file. On macOS (and Linux) this is:
+
+   ```
+   ~/.claude/settings.json
    ```
 
-5. Configure Claude Code to use the hooks by copying the settings:
-   ```bash
-   # Copy or merge claude-settings.json into your Claude Code settings
-   # Location varies by installation
+   Don't overwrite the file wholesale — it likely already contains other
+   settings (model, permissions, env, etc.). Merge the `hooks` block from
+   `claude-settings.json` into the existing JSON. If `~/.claude/settings.json`
+   already has a `hooks` key, combine the `Notification` and `Stop` arrays
+   rather than replacing them so existing hooks keep working. The result
+   should look something like:
+
+   ```jsonc
+   {
+     // ...your existing settings (model, permissions, env, ...)
+     "hooks": {
+       // ...any existing hook entries,
+       "Notification": [ /* entry from claude-settings.json */ ],
+       "Stop":         [ /* entry from claude-settings.json */ ]
+     }
+   }
    ```
 
 ## Configuration
