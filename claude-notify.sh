@@ -1,6 +1,6 @@
 #!/bin/zsh
 #
-# File: notify.sh
+# File: claude-notify.sh
 # Description: Claude code notification script
 # Usage: Call with a single argument, the message of notification
 # Author: Andy Holt

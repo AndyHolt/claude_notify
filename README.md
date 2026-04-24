@@ -30,7 +30,7 @@ A notification system for [Claude Code](https://github.com/anthropics/claude-cod
 
 3. Make the notification script executable:
    ```bash
-   chmod +x ~/Projects/claude_notify/notify.sh
+   chmod +x ~/Projects/claude_notify/claude-notify.sh
    ```
 
 4. (Optional) Add a Claude avatar image to your home directory:
@@ -66,7 +66,7 @@ The notification will help you stay productive by alerting you when Claude needs
 
 ## Customization
 
-Edit `notify.sh` to customize:
+Edit `claude-notify.sh` to customize:
 - Notification sounds (lines 16, 19)
 - Displayed information
 - Notification icon path (line 52)
