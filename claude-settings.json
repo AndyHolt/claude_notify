@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/Projects/claude_notify/claude-notify.sh 'input_required'"
+            "command": "claude-notify 'input_required'"
           }
         ]
       }
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/Projects/claude_notify/claude-notify.sh 'complete'"
+            "command": "claude-notify 'complete'"
           }
         ]
       }
