@@ -23,15 +23,25 @@ A notification system for [Claude Code](https://github.com/anthropics/claude-cod
    brew install terminal-notifier
    ```
 
-2. Clone this repository:
+2. Clone this repository anywhere you like, then `cd` into it — the rest of
+   the install steps assume you're in the repo root:
    ```bash
-   git clone <repository-url> ~/Projects/claude_notify
+   git clone <repository-url>
+   cd claude_notify
    ```
 
-3. Make the notification script executable:
+3. Make the notification script executable and symlink it onto your `PATH`
+   (e.g. `~/.local/bin`, which should be on your `PATH`). The `ln -s` target
+   must be the **absolute path** to the script on your machine — using
+   `"$(pwd)/claude-notify.sh"` resolves it automatically from the repo root:
    ```bash
-   chmod +x ~/Projects/claude_notify/notify.sh
+   chmod +x claude-notify.sh
+   ln -s "$(pwd)/claude-notify.sh" ~/.local/bin/claude-notify
    ```
+
+   The hook in `claude-settings.json` invokes `claude-notify` as a command
+   rather than pointing at the script's location, so the repo can live
+   anywhere as long as the symlink resolves on your `PATH`.
 
 4. (Optional) Add a Claude avatar image to your home directory:
    ```bash
@@ -66,7 +76,7 @@ The notification will help you stay productive by alerting you when Claude needs
 
 ## Customization
 
-Edit `notify.sh` to customize:
+Edit `claude-notify.sh` to customize:
 - Notification sounds (lines 16, 19)
 - Displayed information
 - Notification icon path (line 52)
